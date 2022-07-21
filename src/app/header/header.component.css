@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Raleway:wght@300&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.header-menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+.logo {
+  flex-grow: 8;
+  height: 100%;
+}
+
+.home-link {
+  height: 100%;
+}
+
+.home-link img {
+  height: 100%;
+}
+
+.nav-links {
+  text-align: right;
+  flex-grow: 1;
+}
+
+.nav-links li {
+  display: inline;
+  list-style-type: none;
+  margin: 0 0.8rem;
+  cursor: pointer;
+}
+
+.social {
+  float: right;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.social a {
+  display: block;
+  height: 50%;
+  padding-left: 0.8rem;
+}
+
+.social img {
+  border-radius: 50%;
+  cursor: pointer;
+  margin: auto;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  opacity: 0.8;
+}

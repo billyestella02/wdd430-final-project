@@ -1,0 +1,56 @@
+<mat-card>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <mat-form-field>
+      <input matInput
+        type="text"
+        placeholder="Name"
+        name="name"
+        #name="ngModel"
+        [ngModel]="contact?.name"
+        required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+        type="email"
+        placeholder="Email"
+        name="email"
+        #email="ngModel"
+        [ngModel]="contact?.email"
+        required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+        type="text"
+        placeholder="Country"
+        name="country"
+        #country="ngModel"
+        [ngModel]="contact?.country"
+        required>
+    </mat-form-field>
+    <mat-form-field>
+    <input matInput
+      type="text"
+      placeholder="Phone Number"
+      name="phone"
+      #phone="ngModel"
+      [ngModel]="contact?.phone"
+      required>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput
+        placeholder="Message"
+        name="message"
+        #message="ngModel"
+        [ngModel]="contact?.message"
+        required>
+      </textarea>
+    </mat-form-field><br>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="!f.valid">Submit
+    </button>
+  </form>
+</mat-card>
+

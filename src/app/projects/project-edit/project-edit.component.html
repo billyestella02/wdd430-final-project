@@ -1,0 +1,38 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <mat-card>
+    <mat-form-field>
+      <input matInput
+        type="text"
+        placeholder="Name"
+        name="name"
+        #name="ngModel"
+        [ngModel]="project?.name"
+        required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+        type="text"
+        placeholder="Website"
+        name="website"
+        #website="ngModel"
+        [ngModel]="project?.website"
+        required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+        type="text"
+        placeholder="Image URL"
+        name="imageUrl"
+        #imageUrl="ngModel"
+        [ngModel]="project?.imageUrl"
+        required>
+    </mat-form-field><br>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="!f.valid">
+      Submit
+    </button>
+  </mat-card>
+</form>

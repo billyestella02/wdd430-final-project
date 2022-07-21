@@ -1,0 +1,11 @@
+div {
+  width: 50%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+app-contact-item {
+  width: 80%;
+  margin: auto;
+}

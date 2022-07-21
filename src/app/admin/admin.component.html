@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="sub-header-container">
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>Projects</ng-template>
+        <div class="projects-container">
+          <div class="project-list">
+            <cdk-accordion class="project-accordion">
+              <cdk-accordion-item
+                *ngFor="let project of projects; let index = index"
+                class="project-accordion-item"
+                #accordionItem="cdkAccordionItem"
+                role="button"
+                tabindex="0"
+                [attr.id]="'accordion-header-' + index"
+                [attr.aria-expanded]="accordionItem.expanded"
+                [attr.aria-controls]="'accordion-body-' + index">
+
+                <div class="project-accordion-item-header" (click)="accordionItem.toggle()">
+                  {{ project.name }}
+                  <span class="project-accordion-item-description">
+                    Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+                  </span>
+                </div>
+
+                <div
+                  class="project-accordion-item-body"
+                  role="region"
+                  [style.display]="accordionItem.expanded ? '' : 'none'"
+                  [attr.id]="'accordion-body-' + index"
+                  [attr.aria-labelledby]="'accordion-header-' + index">
+                  <a class="project-link" href="{{ project.website }}" target="_blank">
+                    <img src="{{ project.imageUrl }}">
+                  </a>
+                  <div class="edit-delete">
+                    <div class="spacer"></div>
+                    <a mat-button color="primary" [routerLink]="['/admin/project', '/edit', project.id]">EDIT</a>
+                    <a mat-button color="warn" (click)="onDeleteProject()">DELETE</a>
+                  </div>
+                </div>
+              </cdk-accordion-item>
+            </cdk-accordion>
+          </div>
+          <div class="project-form">
+            <app-project-edit></app-project-edit>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>Contacts</ng-template>
+        <app-contact-list></app-contact-list>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
